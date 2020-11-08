@@ -1,4 +1,5 @@
 import 'package:covid_tracker_final/about_page.dart';
+import 'package:covid_tracker_final/countries/country_page.dart';
 import 'package:covid_tracker_final/global_stats/global_stats_page.dart';
 import 'package:covid_tracker_final/home/blue_tab_bar.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
         body: TabBarView(
           children: [
             GlobalStatsPage(),
-            Center(child: Text('page 2')),
+            CountryPage(),
             AboutPage(),
           ],
         ),

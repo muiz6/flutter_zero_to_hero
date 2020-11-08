@@ -17,6 +17,8 @@ class Strings {
   static const String RECOVERED = "Recovered";
   static const String ACTIVE = "Active";
   static const String SERIOUS = "Serious";
+  static const String CASES = "Cases";
+  static const String SEARCH = "Search";
 }
 
 class Messages {

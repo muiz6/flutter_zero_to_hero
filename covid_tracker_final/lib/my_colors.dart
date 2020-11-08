@@ -7,4 +7,8 @@ class MyColors {
   static const Color ON_BACKGROUND_VARIANT = Color(0x66000000);
 
   static const Color CURVED_TAB_BAR_BG = Color(0x44FFFFFF);
+
+  static const Color RED = Color(0xFFff3d3d);
+  static const Color GREEN = Color(0xFF92f25c);
+  static const Color YELLOW = Color(0xFFf5ae58);
 }
