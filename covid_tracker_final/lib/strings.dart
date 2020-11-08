@@ -11,6 +11,12 @@ class Strings {
   static const String YESTERDAY = "Yesterday";
   static const String GLOBAL_STATISTICS = "Global Statistics";
   static const String ABOUT = "About";
+  static const String DAILY_NEW_CASES = "Daily New Cases";
+  static const String AFFECTED = "Affected";
+  static const String DEATHS = "Deaths";
+  static const String RECOVERED = "Recovered";
+  static const String ACTIVE = "Active";
+  static const String SERIOUS = "Serious";
 }
 
 class Messages {

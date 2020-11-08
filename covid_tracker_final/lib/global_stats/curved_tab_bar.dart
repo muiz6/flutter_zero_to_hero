@@ -1,3 +1,4 @@
+import 'package:covid_tracker_final/dimens.dart';
 import 'package:covid_tracker_final/my_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -11,19 +12,16 @@ class CurvedTabBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: MyColors.CURVED_TAB_BAR_BG,
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(Dimens.RADIUS_L),
       ),
-      child: Padding(
-        padding: EdgeInsets.all(5),
-        child: TabBar(
-          tabs: tabs,
-          labelColor: MyColors.ON_BACKGROUND,
-          unselectedLabelColor: Colors.white,
-          indicator: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(
-              25,
-            ),
+      child: TabBar(
+        tabs: tabs,
+        labelColor: MyColors.ON_BACKGROUND,
+        unselectedLabelColor: Colors.white,
+        indicator: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(
+            Dimens.RADIUS_L,
           ),
         ),
       ),

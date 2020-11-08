@@ -3,14 +3,40 @@ import 'package:flutter/material.dart';
 
 class StatTile extends StatelessWidget {
   final Color color;
+  final String title;
+  final int value;
 
-  StatTile({this.color = const Color(0x44FFFFFF)});
+  StatTile({
+    this.color = const Color(0x44FFFFFF),
+    this.title = '',
+    this.value = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      width: 50,
+      child: Padding(
+        padding: EdgeInsets.all(Dimens.INSET_S),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                    color: Colors.white,
+                  ),
+            ),
+            Text(
+              value.toString(),
+              style: Theme.of(context).textTheme.headline5.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+          ],
+        ),
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Dimens.RADIUS_S),
         color: color,
