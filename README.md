@@ -3,31 +3,31 @@ Code for our Flutter zero to hero sessions.
 
 ## Topics
 
-### Day 1: widgets
-- Widgets
-- Scaffold
-- Container
-- Packages
+### Day 2: Basic App Strucutre
+ - App Structure (widgets)
+ - Scaffold (appBar + body)
+ - Container
+ - Packages
+ 
+### Day 3: Grid System
+ - Row
+ - Column
+ - Icons
+ - Images
+ - Scaffold(Tab bar)
 
-### Day 2: icon_and_images
-- Row + Column
+### Day 3: Xylophone App 
+ - Sounds
+ - Buttons & Gesture Detector
+ - List View
+ - Stateful vs Stateless Widgets
 
-- Icons
-- Images
-
-### Day 3: covid_tracker_part_one
-- Sounds
-- Buttons & Gesture Detector
-- Ink Well
-- Stateful vs Stateless Widgets
-
-### Day 4: covid_tracker_part_two
+### Day 4: COVID Stats App Part-1
 - Text Field
 - Custom Widgets
 - Routes
-- BLOC Pattern
 
-### Day 5: covid_tracker_final
+### Day 5: COVID Stats App Part-2
 - Alert Box
-- Painter
+- Themes
 - APIs
