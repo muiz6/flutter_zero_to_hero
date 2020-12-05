@@ -1,0 +1,33 @@
+name: xyplophone
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter  
+  
+  cupertino_icons: ^1.0.0
+  audioplayers: ^0.17.0
+  flutter_launcher_icons: ^0.8.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/download.png"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:  
+  uses-material-design: true
+  assets:
+    - assets/
