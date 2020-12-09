@@ -1,41 +1,59 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Listview());
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListViewApp();
+  }
 }
 
-class Listview extends StatelessWidget {
+class ListViewApp extends StatefulWidget {
+  @override
+  _ListViewAppState createState() => _ListViewAppState();
+}
+
+class _ListViewAppState extends State<ListViewApp> {
+  Widget tile(String text) {
+    return Center(
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 25, letterSpacing: 5, wordSpacing: 5),
+      ),
+    );
+  }
+
+  String str = "tile";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          title: Text("ListView app"),
           backgroundColor: Colors.teal,
-          title: Text("Listview"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.teal,
+          isExtended: true,
+          onPressed: () {
+            setState(() {
+              str = "item";
+            });
+          },
         ),
         backgroundColor: Colors.tealAccent,
-        body: Padding(
-          padding: EdgeInsets.all(5),
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.all(5),
-                child: Container(
-                  height: 60,
-                  padding: EdgeInsets.all(10),
-                  color: Colors.teal[300],
-                  child: Center(
-                    child: Text(
-                      "This is a tile at ${index + 1} position.",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ),
-              );
-            },
-            itemCount: 100,
-          ),
+        body: ListView.builder(
+          itemCount: 1000,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.teal[300],
+              height: 60,
+              padding: EdgeInsets.all(10),
+              child: tile("This is #${index + 1} $str"),
+            );
+          },
         ),
       ),
     );
