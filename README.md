@@ -40,4 +40,4 @@ Code for our Flutter zero to hero workshop, that was held in December 2020.
 - Themes
 - APIs
 
-![Covid App](screenshots/covid_tracker.png)
+![Covid App](screenshots/covid_tracker.jpg)

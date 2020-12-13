@@ -1,49 +1,35 @@
-import 'package:covid_stats_app/countries.dart';
-import 'package:http/http.dart';
 import 'dart:convert';
 
-class CountryProvider {
-  List<Country> countries;
+import 'country_data.dart';
+import 'package:http/http.dart' as http;
 
-  List<Country> fetchCountries(dynamic parsed) {
-    // print(parsed.length);
-    List<Country> countries = List();
-    for (int i = 0; i < parsed.length; i++) {
-      countries.add(
-        Country(
-          name: countryNames[parsed[i]['country']] != null
-              ? countryNames[parsed[i]['country']]
-              : parsed[i]['country'],
-          cases: parsed[i]["cases"],
-          deaths: parsed[i]['deaths'],
-          recovered: parsed[i]['recovered'],
-          index: i + 1,
-        ),
+class CountryProvider {
+  List<CountryData> countries;
+
+  List<CountryData> getCountries(dynamic parsedJson) {
+    print(parsedJson.length);
+    List<CountryData> countryList = [];
+    for (int i = 0; i < parsedJson.length; i++) {
+      CountryData temp = CountryData(
+        countryName: parsedJson[i]["country"],
+        cases: parsedJson[i]["cases"],
+        deaths: parsedJson[i]["deaths"],
+        recovered: parsedJson[i]["recovered"],
       );
+      countryList.add(temp);
     }
-    // print(countries[0].name);
-    this.countries = countries;
-    return countries;
+    return countryList;
   }
 
-  Future<List<Country>> fetchApi() async {
-    final client = Client();
-    var response = await client.get("https://covid19-api.org/api/status");
+  Future<List<CountryData>> getData() async {
+    String url = "https://covid19-api.org/api/status";
+    var response = await http.get(url);
     if (response.statusCode == 200) {
-      return fetchCountries(json.decode(response.body));
+      // print(response.contentLength);
+      return getCountries(json.decode(response.body));
     } else {
-      print("Error!!! $response");
+      print("Error!!! ${response.statusCode}");
       return [];
     }
   }
-}
-
-class Country {
-  String name;
-  int cases;
-  int deaths;
-  int recovered;
-  int index;
-
-  Country({this.name, this.cases, this.deaths, this.recovered, this.index});
 }
