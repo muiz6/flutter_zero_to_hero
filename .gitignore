@@ -47,3 +47,6 @@ android/app/release
 
 # VSCode related
 .vscode/
+
+# Android Studio Related
+.gradle/
